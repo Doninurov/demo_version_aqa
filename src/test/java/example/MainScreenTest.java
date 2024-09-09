@@ -8,7 +8,7 @@ import pages.RegistrationPage;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class mainScreenTest extends testBase {
+public class MainScreenTest extends testBase {
     MainScreenPage mainScreenPage = new MainScreenPage();
     RegistrationPage registrationPage = new RegistrationPage() ;
     @BeforeEach

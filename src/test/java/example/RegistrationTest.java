@@ -12,23 +12,23 @@ import pages.RegistrationPage;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class registrationTest extends testBase implements Text {
+public class RegistrationTest extends testBase implements Text {
         RegistrationPage registrationPage = new RegistrationPage() ;
     @Disabled
-         @Test
-         @DisplayName("Successful login")
-         void LoginSuccess() {
-            step("Open registrations form", () -> {
-                open(Configuration.baseUrl);
-            });
-            step("Filling form", () -> {
-                registrationPage.setUserName(USER_NAME)
-                        .setPassword(PASSWORD);
-            });
-            step("Checking for login", () -> {
-                registrationPage.checkForSuccessLogin();
-            });
-        }
+    @Test
+    @DisplayName("Successful login")
+    void LoginSuccess() {
+        step("Open registrations form", () -> {
+            open(Configuration.baseUrl);
+        });
+        step("Filling form", () -> {
+            registrationPage.setUserName(USER_NAME)
+                    .setPassword(PASSWORD);
+        });
+        step("Checking for login", () -> {
+            registrationPage.checkForSuccessLogin();
+        });
+    }
 
 //        Правильный вариант с библиотекой OWNER
     @Test
