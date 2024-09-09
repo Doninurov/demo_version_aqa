@@ -15,6 +15,7 @@ public class RegistrationPage implements Text {
             userNameField = $("#user-name"),
             loginBtn = $("#login-button"),
             headerContainer = $(".header_secondary_container");
+
     public RegistrationPage setPassword(String value) {
         passwordField.setValue(value);
         return this;
@@ -23,18 +24,16 @@ public class RegistrationPage implements Text {
         userNameField.setValue(value);
         return this;
     }
-    public RegistrationPage checkForSuccessLogin() {
+    public void checkForSuccessLogin() {
         loginBtn.click();
         headerContainer.shouldHave(text(PRODUCTS));
-        return this;
     }
-    public RegistrationPage authorization() {
+    public void authorization() {
         AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
         userNameField.setValue(config.username());
         passwordField.setValue(config.password());
         loginBtn.click();
         headerContainer.shouldHave(text(PRODUCTS));
-        return this;
     }
 }
 

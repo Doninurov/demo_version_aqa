@@ -23,13 +23,11 @@ public class MainScreenPage {
             resetActionsBtn = $("#reset_sidebar_link"),
             logoutBtn = $("#logout_sidebar_link");
 
-    public MainScreenPage checkForCartEmpty() {
+    public void checkForCartEmpty() {
         cartBadge.shouldNot(exist);
-        return this;
     }
-    public MainScreenPage addBackpackIntoCart() {
+    public void addBackpackIntoCart() {
         backpackItem.click();
-        return this;
     }
     public void add5ItemsIntoCart() {
         SelenideElement[] items = {backpackItem, bikeLightItem, bikeTShirtItem, fleeceJacketItem, onesieItem
