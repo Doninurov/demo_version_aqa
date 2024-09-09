@@ -10,11 +10,11 @@ allure {
     report {
         version.set("2.21.0")
     }
-    adapter { // отвечает за появление папочки build/allure-results
-        aspectjWeaver.set(true) //обработка аннотации @Step
+    adapter {
+        aspectjWeaver.set(true)
         frameworks {
-            junit5 { //название фреймворка
-                adapterVersion.set("2.21.0") //версия интеграции фреймворка и Allure
+            junit5 {
+                adapterVersion.set("2.21.0")
             }
         }
     }
@@ -66,20 +66,11 @@ task smoke_tests(type: Test) {
     useJUnitPlatform {
         includeTags("Smoke")
     }
+// Очищаем результаты Allure отчетов
 }
-
-task test_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("one_property")
-    }
+task cleanAllureReports(type: Delete) {
+    delete 'build/allure-results', 'build/allure-report'
 }
-
-task teddd(type: Test) {
-    useJUnitPlatform {
-        includeTags("123")
-    }
-}
-
 
 
 
